@@ -1,0 +1,20 @@
+Running query: select commit.collection as event, count(*) as count from bluesky group by event order by count desc, event asc;
+Real time: 0.02692273 seconds
+Real time: 0.01694564 seconds
+Real time: 0.01638707 seconds
+Running query: select commit.collection as event, count(*) as count, count(distinct did) as users from bluesky  where kind == 'commit' and commit.operation = 'create' group by event order by count desc;
+Real time: 0.09046148 seconds
+Real time: 0.09066723 seconds
+Real time: 0.06633239 seconds
+Running query: select commit.collection as event, extract(hour from epoch_time_to_timestamp(time_us/1000000)) as hour_of_day, count(*) as count from bluesky  where kind = 'commit' AND commit.operation = 'create' and commit.collection IN ['app.bsky.feed.post', 'app.bsky.feed.repost', 'app.bsky.feed.like'] group by event, hour_of_day order by hour_of_day, event;
+Real time: 0.07178712 seconds
+Real time: 0.05345615 seconds
+Real time: 0.07188973 seconds
+Running query: select did as user_id, min(epoch_time_to_timestamp(time_us/1000000)) as first_post_ts from bluesky  where kind = 'commit' and commit.operation = 'create' and commit.collection = 'app.bsky.feed.post' group by user_id order by first_post_ts asc limit 3;
+Real time: 0.08329340 seconds
+Real time: 0.05289203 seconds
+Real time: 0.05629961 seconds
+Running query: select did as user_id, 1000*extract(epoch from date_diff(coerce_to_str(max(epoch_time_to_timestamp(time_us/1000000))), coerce_to_str(min(epoch_time_to_timestamp(time_us/1000000))))) as activity_span from bluesky  where kind = 'commit' and commit.operation = 'create' and commit.collection = 'app.bsky.feed.post' group by user_id order by activity_span desc limit 3;
+Real time: 0.08881190 seconds
+Real time: 0.06515721 seconds
+Real time: 0.06154216 seconds
