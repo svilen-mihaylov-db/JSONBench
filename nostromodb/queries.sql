@@ -1,4 +1,4 @@
-select commit.collection as event, count(*) as count from bluesky group by event order by count desc, event asc;
+select commit.collection as event, count(*) as count from bluesky group by event order by count desc;
 select commit.collection as event, count(*) as count, count(distinct did) as users from bluesky  where kind == 'commit' and commit.operation = 'create' group by event order by count desc;
 select commit.collection as event, extract(hour from epoch_time_to_timestamp(time_us/1000000)) as hour_of_day, count(*) as count from bluesky  where kind = 'commit' AND commit.operation = 'create' and commit.collection IN ['app.bsky.feed.post', 'app.bsky.feed.repost', 'app.bsky.feed.like'] group by event, hour_of_day order by hour_of_day, event;
 select did as user_id, min(epoch_time_to_timestamp(time_us/1000000)) as first_post_ts from bluesky  where kind = 'commit' and commit.operation = 'create' and commit.collection = 'app.bsky.feed.post' group by user_id order by first_post_ts asc limit 3;
