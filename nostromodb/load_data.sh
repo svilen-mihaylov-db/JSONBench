@@ -36,5 +36,3 @@ for file in $(ls "$DATA_DIR"/*.json.gz | sort); do
         break
     fi
 done
-
- ./run_statements.sh "$DATA_DIR" "$DB_PATH" "pragma table_flush('$TABLE_NAME')"

@@ -3,7 +3,7 @@ Result for query Q1:
 
 Opened database at '/db/catalog.json'
 ╭────────────────────────────┬────────────╮
-│ event: str                 │ count: int │
+│ event: {}                  │ count: int │
 ├────────────────────────────┼────────────┤
 │ app.bsky.feed.like         │ 448944     │
 │ app.bsky.graph.follow      │ 360374     │
@@ -12,22 +12,23 @@ Opened database at '/db/catalog.json'
 │ app.bsky.graph.block       │ 14040      │
 │ app.bsky.actor.profile     │ 11762      │
 │ app.bsky.graph.listitem    │ 8103       │
-│                            │ 5328       │
+│                            │ 5320       │
 │ app.bsky.graph.listblock   │ 895        │
 │ app.bsky.graph.starterpack │ 405        │
 │ app.bsky.graph.list        │ 356        │
 │ app.bsky.feed.threadgate   │ 255        │
 │ app.bsky.feed.postgate     │ 104        │
 │ app.bsky.feed.generator    │ 74         │
+│ null                       │ 8          │
 │ app.bsky.labeler.service   │ 4          │
 ╰────────────────────────────┴────────────╯
-15 value(s) returned.
+16 value(s) returned.
 ------------------------------------------------------------------------------------------------------------------------
 Result for query Q2:
 
 Opened database at '/db/catalog.json'
 ╭────────────────────────────┬────────────┬─────────────╮
-│ event: str                 │ count: int │ users: uint │
+│ event: {}                  │ count: int │ users: uint │
 ├────────────────────────────┼────────────┼─────────────┤
 │ app.bsky.feed.like         │ 444523     │ 117617      │
 │ app.bsky.graph.follow      │ 337978     │ 63957       │
@@ -49,7 +50,7 @@ Result for query Q3:
 
 Opened database at '/db/catalog.json'
 ╭──────────────────────┬───────────────────┬────────────╮
-│ event: str           │ hour_of_day: uint │ count: int │
+│ event: {}            │ hour_of_day: uint │ count: int │
 ├──────────────────────┼───────────────────┼────────────┤
 │ app.bsky.feed.like   │ 16                │ 444523     │
 │ app.bsky.feed.post   │ 16                │ 86812      │
@@ -61,7 +62,7 @@ Result for query Q4:
 
 Opened database at '/db/catalog.json'
 ╭──────────────────────────────────┬───────────────────────────────╮
-│ user_id: str                     │ first_post_ts: str            │
+│ user_id: {}                      │ first_post_ts: str            │
 ├──────────────────────────────────┼───────────────────────────────┤
 │ did:plc:yj3sjq3blzpynh27cumnp5ks │ 2024-11-21 16:25:49.000166912 │
 │ did:plc:l5o3qjrmfztir54cpwlv2eme │ 2024-11-21 16:25:49.001904896 │
@@ -73,7 +74,7 @@ Result for query Q5:
 
 Opened database at '/db/catalog.json'
 ╭──────────────────────────────────┬────────────────────╮
-│ user_id: str                     │ activity_span: dbl │
+│ user_id: {}                      │ activity_span: dbl │
 ├──────────────────────────────────┼────────────────────┤
 │ did:plc:tsyymlun4eqjuw7hqrhmwagd │ 813006.958961      │
 │ did:plc:3ug235sfy2pz7cawmpsftb65 │ 811602.261066      │
