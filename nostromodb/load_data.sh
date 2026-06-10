@@ -26,7 +26,7 @@ for file in $(ls "$DATA_DIR"/*.json.gz | sort); do
 
     if [[ -f "$file" ]]; then
         base_name=$(basename ${file})
-        ./run_statements.sh "$DATA_DIR" "$DB_PATH" "import from '/data/$base_name' into $TABLE_NAME options {'has_top_level_array': false}"
+        ./run_statements.sh "$DATA_DIR" "$DB_PATH" "import from '/data/$base_name' into $TABLE_NAME options {'NDJSON': true}"
         counter=$((counter + 1))
     fi
 
